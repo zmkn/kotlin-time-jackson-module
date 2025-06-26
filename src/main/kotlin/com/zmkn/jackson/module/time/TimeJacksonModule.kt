@@ -1,8 +1,8 @@
-package com.zmkn.jackson.module.datetime
+package com.zmkn.jackson.module.time
 
 import com.fasterxml.jackson.databind.module.SimpleModule
-import com.zmkn.jackson.module.datetime.serializers.InstantToStringSerializer
-import com.zmkn.jackson.module.datetime.serializers.StringToInstantDeserializer
+import com.zmkn.jackson.module.time.serializers.InstantToStringSerializer
+import com.zmkn.jackson.module.time.serializers.StringToInstantDeserializer
 import kotlin.time.ExperimentalTime
 import kotlin.time.Instant
 

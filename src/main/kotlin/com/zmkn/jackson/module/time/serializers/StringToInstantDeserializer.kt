@@ -1,4 +1,4 @@
-package com.zmkn.jackson.module.datetime.serializers
+package com.zmkn.jackson.module.time.serializers
 
 import com.fasterxml.jackson.core.JsonParser
 import com.fasterxml.jackson.databind.DeserializationContext
