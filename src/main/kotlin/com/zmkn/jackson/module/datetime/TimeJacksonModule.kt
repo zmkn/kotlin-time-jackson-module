@@ -1,0 +1,29 @@
+package com.zmkn.jackson.module.datetime
+
+import com.fasterxml.jackson.databind.module.SimpleModule
+import com.zmkn.jackson.module.datetime.serializers.InstantToStringSerializer
+import com.zmkn.jackson.module.datetime.serializers.StringToInstantDeserializer
+import kotlin.time.ExperimentalTime
+import kotlin.time.Instant
+
+object TimeJacksonModule {
+    @OptIn(ExperimentalTime::class)
+    val instantSerializers = fun SimpleModule.() {
+        addSerializer(Instant::class.java, InstantToStringSerializer())
+        addDeserializer(Instant::class.java, StringToInstantDeserializer())
+    }
+
+    val all: SimpleModule by lazy {
+        generateModule(
+            instantSerializers,
+        )
+    }
+
+    fun generateModule(vararg serializers: SimpleModule.() -> Unit): SimpleModule {
+        return SimpleModule().apply {
+            serializers.forEach {
+                it()
+            }
+        }
+    }
+}
