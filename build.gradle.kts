@@ -65,8 +65,8 @@ if (localProperties.getProperty("mavenPublish.enable") == "true") {
                 artifactId = project.name
                 from(components["java"])
                 pom {
-                    name.set("Kotlinx Datetime Jackson Module")
-                    description.set("Kotlinx datetime module for Jackson")
+                    name.set("Kotlin Time Jackson Module")
+                    description.set("Kotlin time module for Jackson")
                     url.set("https://github.com/zmkn/kotlin-time-jackson-module")
                     inceptionYear.set("2025")
                     licenses {
@@ -124,11 +124,11 @@ if (localProperties.getProperty("jreleaser.enable") == "true") {
 
     configure<JReleaserExtension> {
         project {
-            name.set("Kotlinx Datetime Jackson Module")
+            name.set("Kotlin Time Jackson Module")
 
             // A short description (60 chars max).
             //  Only if configured distributions or announcers.
-            description.set("Kotlinx datetime module for Jackson")
+            description.set("Kotlin time module for Jackson")
 
             // A list of author names.
             //  Only if configured distributions or announcers.
