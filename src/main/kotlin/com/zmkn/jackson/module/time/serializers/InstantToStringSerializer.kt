@@ -1,14 +1,12 @@
 package com.zmkn.jackson.module.time.serializers
 
-import com.fasterxml.jackson.core.JsonGenerator
-import com.fasterxml.jackson.databind.JsonSerializer
-import com.fasterxml.jackson.databind.SerializerProvider
-import kotlin.time.ExperimentalTime
+import tools.jackson.core.JsonGenerator
+import tools.jackson.databind.SerializationContext
+import tools.jackson.databind.ValueSerializer
 import kotlin.time.Instant
 
-@OptIn(ExperimentalTime::class)
-class InstantToStringSerializer : JsonSerializer<Instant>() {
-    override fun serialize(value: Instant, gen: JsonGenerator, serializers: SerializerProvider) {
+class InstantToStringSerializer : ValueSerializer<Instant>() {
+    override fun serialize(value: Instant, gen: JsonGenerator, ctxt: SerializationContext) {
         gen.writeString(value.toString())
     }
 }

@@ -24,7 +24,7 @@ try {
 }
 
 group = "com.zmkn.jackson"
-version = "1.0.0"
+version = "2.0.0-SNAPSHOT"
 
 java {
     withJavadocJar()
@@ -514,6 +514,7 @@ tasks.withType<Test> {
 }
 
 dependencies {
-    api(libs.jackson.databind) // JSON 序列化库
+    api(platform(libs.tools.jackson.bom)) // Jackson Bom 物料库
+    api(libs.tools.jackson.databind) // JSON 序列化库
     testImplementation(kotlin("test")) // Kotlin 测试依赖
 }
